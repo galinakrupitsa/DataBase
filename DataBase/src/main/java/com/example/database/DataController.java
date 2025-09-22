@@ -2,18 +2,18 @@ package com.example.database;
 
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
-
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/user")
 public class DataController {
-    final DataService dataService;
+    final UserService userService;
 
-    public DataController(DataService dataService) {
-        this.dataService = dataService;
+    public DataController(UserService userService) {
+        this.userService = userService;
     }
-    @PostMapping("/user/{userId}/create")
-    public String saveData(@PathVariable String userId, @RequestBody DataClass dataClass) {
-        return dataClass.getName() +" " + dataClass.getLastName();
+
+
+    @PostMapping("/create")
+    public String saveData(@RequestBody UserDTO userDTO) {
+        return userDTO.getName() +" " + userDTO.getLastName();
     }
 }
