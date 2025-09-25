@@ -12,8 +12,13 @@ public class DataController {
         this.userService = userService;
     }
 
+    @GetMapping("/{id}")
+    public UserDTO getUser(@PathVariable Long id) {
+        return userService.getUserById(id);
+    }
+
     @PostMapping("/create")
-    public String saveData(@RequestBody UserDTO userDTO) {
-        return userService.myMetod(userDTO);
+    public Integer createUser(@RequestBody UserDTO user) {
+        return userService.saveUser(user);
     }
 }
