@@ -1,8 +1,8 @@
 curl --location 'HTTP://localhost:8080/user/create' \
 --header 'Content-Type: application/json' \
 --data '{
-    "name": "Galina",
-    "lastName": "Krupitsa"
+    "name": "Kai",
+    "lastName": "Kraus"
 }'
 
 
